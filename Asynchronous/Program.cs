@@ -9,13 +9,17 @@
     {
         static void Main(string[] args)
         {
+            //「Threadの実行サンプル」呼び出し
+            var ts = new ThreadStartSample();
+            ts.Main();
+
             //「ThreadPool.QueueUserWorkItemの実行サンプル」呼び出し
-            var qs = new QueueUserWorkItemSample();
-            qs.Main();
+            //var qs = new QueueUserWorkItemSample();
+            //qs.Main();
 
             //「ThreadPool.QueueUserWorkItemのキャンセルのサンプル」呼び出し
-            var qcs = new QueueUserWorkItemCancelSample();
-            qcs.Main();
+            //var qcs = new QueueUserWorkItemCancelSample();
+            //qcs.Main();
 
             //「Taskのキャンセルのサンプル」呼び出し
             //var tcs = new TaskCancelSample();
