@@ -9,9 +9,13 @@
     {
         static void Main(string[] args)
         {
+            //「Async/Await実装サンプル」の呼び出し
+            var asaw = new AsyncAwaitSample();
+            asaw.Main();
+
             //「Threadの実行サンプル」呼び出し
-            var ts = new ThreadStartSample();
-            ts.Main();
+            //var ts = new ThreadStartSample();
+            //ts.Main();
 
             //「ThreadPool.QueueUserWorkItemの実行サンプル」呼び出し
             //var qs = new QueueUserWorkItemSample();
