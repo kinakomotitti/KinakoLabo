@@ -14,7 +14,7 @@
             Thread thread = new Thread(AsynchronousMethod01);
             MessageManager.WriteStart();
 
-            //Threadをフォアグラウンドで実行(デフォルトはバックグラウンド)
+            //Threadをフォアグラウンドで実行（規定はフォアグラウンド）
             thread.IsBackground = false;
 
             //処理実行
