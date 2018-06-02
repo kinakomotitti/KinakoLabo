@@ -1,5 +1,6 @@
 ﻿namespace Asynchronous
 {
+    using Asynchronous.Util;
     #region using
     using System;
     using System.Threading;
@@ -42,24 +43,22 @@
         //キャンセルすることができない。
         private async Task<string> AsynchronousMethod03()
         {
-            string methodName = "AsynchronousMethod03";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             await Task.Delay(1000);
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
             return "SUCCESS";
         }
 
         //タスクをキャンセルするためには、CancellationTokenを受け取るようにしなければならない。
         private async Task<string> AsynchronousMethod03(CancellationToken token)
         {
-            string methodName = "AsynchronousMethod03";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             //以下のようにすると呼び出し元からのキャンセル通知を認識し、
             //キャンセルすることができる
             //※今回は、Dlayメソッドにtokenを渡してキャンセルできるようにしている。
             //token.ThrowIfCancellationRequested();
             await Task.Delay(1000);
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
             return "SUCCESS";
         }
     }

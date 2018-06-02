@@ -1,5 +1,6 @@
 ﻿namespace Asynchronous
 {
+    using Asynchronous.Util;
     #region using
     using System;
     using System.Threading;
@@ -21,7 +22,7 @@
             Thread.Sleep(1000);//タスク実行を待つため、１秒待機
             source.Cancel();
 
-            Console.WriteLine("Cancel");
+            MessageManager.WriteJobStatus("Cancel");
             Thread.Sleep(2000);//キャンセルできなかったタスクの実行を確認するため待機。
         }
 
@@ -29,21 +30,21 @@
         //キャンセルすることができない。
         private void AsynchronousMethod01(object state)
         {
-            string methodName = "AsynchronousMethod01";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             for (int i = 0; i < 20; i++)
             {
                 Thread.Sleep(100);
-                Console.WriteLine($"{methodName}  : {i}");
+                MessageManager.WriteJobStatus($"LoopCount: { i}");
             }
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
+
         }
 
         //タスクをキャンセルするためには、CancellationTokenを受け取るようにしなければならない。
         private void AsynchronousMethod01(object state, CancellationToken token)
         {
-            string methodName = "AsynchronousMethod01 with CancellationToken";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
+
             //以下のようにすると呼び出し元からのキャンセル通知を認識し、
             //キャンセルすることができる
             //※今回は、Dlayメソッドにtokenを渡してキャンセルできるようにしている。
@@ -52,9 +53,9 @@
             {
                 if (token.IsCancellationRequested) return;
                 Thread.Sleep(100);
-                Console.WriteLine($"{methodName}  : {i}");
+                MessageManager.WriteJobStatus($"LoopCount: { i}");
             }
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
         }
     }
 }

@@ -14,24 +14,24 @@
             asaw.Main();
 
             //「Threadの実行サンプル」呼び出し
-            //var ts = new ThreadStartSample();
-            //ts.Main();
+            var ts = new ThreadStartSample();
+            ts.Main();
 
             //「ThreadPool.QueueUserWorkItemの実行サンプル」呼び出し
-            //var qs = new QueueUserWorkItemSample();
-            //qs.Main();
+            var qs = new QueueUserWorkItemSample();
+            qs.Main();
 
             //「ThreadPool.QueueUserWorkItemのキャンセルのサンプル」呼び出し
-            //var qcs = new QueueUserWorkItemCancelSample();
-            //qcs.Main();
+            var qcs = new QueueUserWorkItemCancelSample();
+            qcs.Main();
 
             //「Taskのキャンセルのサンプル」呼び出し
-            //var tcs = new TaskCancelSample();
-            //tcs.Main();
-            
+            var tcs = new TaskCancelSample();
+            tcs.Main();
+
             //「Taskの実行（Run）のサンプル」呼び出し
-            //var trs = new TaskRunSample();
-            //trs.Main();
+            var trs = new TaskRunSample();
+            trs.Main();
 #if DEBUG
             //Task、ThreadPoolはフォアグラウンドスレッドで動作するため、
             //ここに到達した時点でまだ処理が継続していても
