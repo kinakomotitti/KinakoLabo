@@ -1,6 +1,7 @@
 ﻿namespace Asynchronous
 {
     #region using
+    using Asynchronous.Util;
     using System;
     using System.Threading;
     #endregion
@@ -19,14 +20,13 @@
 
         private void AsynchronousMethod01(object state)
         {
-            string methodName = "AsynchronousMethod01";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             for (int i = 0; i < 20; i++)
             {
                 Thread.Sleep(100);
-                Console.WriteLine($"{methodName}  : {i}");
+                MessageManager.WriteJobStatus($"LoopCount: { i}");
             }
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
         }
     }
 }

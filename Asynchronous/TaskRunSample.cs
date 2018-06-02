@@ -1,6 +1,7 @@
 ﻿namespace Asynchronous
 {
     #region using
+    using Asynchronous.Util;
     using System;
     using System.Threading.Tasks;
     #endregion
@@ -27,26 +28,23 @@
             });
         }
 
-        private  async void AsynchronousMethod01()
+        private async void AsynchronousMethod01()
         {
-            string methodName = "AsynchronousMethod01";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             await Task.Delay(1000);
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
         }
-        private  async Task AsynchronousMethod02()
+        private async Task AsynchronousMethod02()
         {
-            string methodName = "AsynchronousMethod02";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             await Task.Delay(1000);
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
         }
-        private  async Task<string> AsynchronousMethod03()
+        private async Task<string> AsynchronousMethod03()
         {
-            string methodName = "AsynchronousMethod03";
-            Console.WriteLine($"{methodName} start");
+            MessageManager.WriteStart();
             await Task.Delay(1000);
-            Console.WriteLine($"{methodName} end");
+            MessageManager.WriteEnd();
             return string.Empty;
         }
     }
