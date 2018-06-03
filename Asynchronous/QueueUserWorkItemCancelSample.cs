@@ -47,8 +47,7 @@
 
             //以下のようにすると呼び出し元からのキャンセル通知を認識し、
             //キャンセルすることができる
-            //※今回は、Dlayメソッドにtokenを渡してキャンセルできるようにしている。
-            //token.ThrowIfCancellationRequested();
+            //token.ThrowIfCancellationRequested(); ←これは使わない。
             for (int i = 0; i < 20; i++)
             {
                 if (token.IsCancellationRequested) return;

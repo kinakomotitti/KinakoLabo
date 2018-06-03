@@ -49,6 +49,8 @@
     <Compile Include="QueueUserWorkItemSample.cs" />
     <Compile Include="TaskCancelSample.cs" />
     <Compile Include="TaskRunSample.cs" />
+    <Compile Include="ThreadCancelSample.cs" />
+    <Compile Include="ThreadIDSample.cs" />
     <Compile Include="ThreadStartSample.cs" />
     <Compile Include="Util\MessageManager.cs" />
   </ItemGroup>

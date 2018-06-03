@@ -15,11 +15,11 @@
         public void Main()
         {
             var source = new CancellationTokenSource();
-            var task = Task<string>.Run(async () =>
+            var task = Task<string>.Run( () =>
             {
                 //CancellationTokenを渡さないと、キャンセルができない。
                 // return await AsynchronousMethod03();
-                return await AsynchronousMethod03(source.Token);
+                return  AsynchronousMethod03(source.Token);
 
             }, source.Token);
 
@@ -54,10 +54,21 @@
         {
             MessageManager.WriteStart();
             //以下のようにすると呼び出し元からのキャンセル通知を認識し、
-            //キャンセルすることができる
+            //キャンセルすることができる。
+            //tokenに対して取り消しが要求された場合、System.OperationCanceledException をスローする。
+            token.ThrowIfCancellationRequested();
+
             //※今回は、Dlayメソッドにtokenを渡してキャンセルできるようにしている。
-            //token.ThrowIfCancellationRequested();
-            await Task.Delay(1000);
+            await Task.Delay(1000,token);
+
+            //（参考）MSDNのサンプルでは以下のように実装されていた。
+            //if (token.IsCancellationRequested)
+            //{
+            //    MessageManager.WriteJobStatus("Task AsynchronousMethod03 cancelled");
+            //    //※必ずしもThrowしないといけないわけではない。場合によってはreturnするだけでも良い。
+            //    token.ThrowIfCancellationRequested();
+            //}
+
             MessageManager.WriteEnd();
             return "SUCCESS";
         }
