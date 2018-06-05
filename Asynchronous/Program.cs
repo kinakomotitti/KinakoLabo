@@ -9,7 +9,9 @@
     {
         static void Main(string[] args)
         {
-
+            HowToUseTask htut = new HowToUseTask();
+            htut.Main();
+            
             #region Async/Await
 
             ////「Async/Await実装サンプル」の呼び出し
@@ -24,9 +26,9 @@
             //var ts = new ThreadStartSample();
             //ts.Main();
 
-            //「Threadのキャンセル処理サンプル」呼び出し
-            var tcs = new ThreadCancelSample();
-            tcs.Main();
+            ////「Threadのキャンセル処理サンプル」呼び出し
+            //var tcs = new ThreadCancelSample();
+            //tcs.Main();
 
             #endregion
 
