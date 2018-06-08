@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="AsynchronousUWP.Views.PivotPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    xmlns:model="using:AsynchronousUWP.Models"
+    xmlns:views="using:AsynchronousUWP.Views"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Pivot x:Uid="PivotPage">
+            <PivotItem x:Uid="PivotItem_Main">
+                <Frame>
+                    <views:MainPage/>
+                </Frame>
+            </PivotItem>
+            <PivotItem x:Uid="PivotItem_Asynchronous">
+                <Frame>
+                    <views:AsynchronousPage/>
+                </Frame>
+            </PivotItem>
+            <PivotItem x:Uid="PivotItem_Blank1">
+                <Frame>
+                    <views:Blank1Page/>
+                </Frame>
+            </PivotItem>
+            <PivotItem x:Uid="PivotItem_WebView">
+                <Frame>
+                    <views:WebViewPage/>
+                </Frame>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
