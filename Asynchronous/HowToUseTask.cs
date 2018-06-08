@@ -1,13 +1,11 @@
-﻿using Asynchronous.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace Asynchronous
+﻿namespace Asynchronous
 {
+    #region using
+    using Asynchronous.Util;
+    using System.Threading;
+    using System.Threading.Tasks;
+    #endregion
+
     class HowToUseTask
     {
         public void Main()
@@ -21,6 +19,7 @@ namespace Asynchronous
             Thread.Sleep(50000);
             MessageManager.WriteEnd();
         }
+
         #region Run
 
         private void TaskRun()
@@ -57,7 +56,7 @@ namespace Asynchronous
 
             //何かしら別の処理
 
-
+            
             //タスクを実行（インスタンスを生成してから何かの処理を挟んでの実行ができる）
             task.Start();
         }
@@ -111,7 +110,7 @@ namespace Asynchronous
             //Thread ID :4 ,Sample End
             //Thread ID :1 ,TaskContinueWithPattern1 End        ←task___が終わるのを待って完了
         }
-
+        
         private void TaskContinueWithPattern2()
         {
             MessageManager.WriteStart();
@@ -224,7 +223,7 @@ namespace Asynchronous
             //Thread ID :1 ,Main Start
             //Thread ID :1 ,TaskContinueWithPattern5 Start
             //Thread ID :1 ,TaskContinueWithPattern5 End                    ←元のタスクが正常に実行されたので、(2)~(4)のタスクは実行されない。
-        }
+        }   
 
         private void TaskContinueWithPattern5()
         {
