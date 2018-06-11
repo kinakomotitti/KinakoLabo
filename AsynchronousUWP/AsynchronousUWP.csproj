@@ -108,6 +108,7 @@
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Util\MessageManager.cs" />
     <Compile Include="Views\AsynchronousPage.xaml.cs">
       <DependentUpon>AsynchronousPage.xaml</DependentUpon>
     </Compile>

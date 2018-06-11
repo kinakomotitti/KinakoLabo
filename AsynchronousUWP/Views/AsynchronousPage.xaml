@@ -11,8 +11,23 @@
         Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="333*"/>
+                <ColumnDefinition Width="371*"/>
+                <ColumnDefinition Width="344*"/>
+                <ColumnDefinition Width="428*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="236*"/>
+                <RowDefinition Height="214*"/>
+                <RowDefinition Height="255*"/>
+                <RowDefinition Height="296*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="TaskStatus_TextBlock" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Margin="0.2,0,0,0" />
+            <TextBlock x:Name="TaskJobStatus_TextBlock" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0.2,0,427,254.234" />
+            <Button x:Name="Execute_Button" Click="Execute_Button_Click" Content="Execute" Grid.Row="2" Grid.Column="1" FontSize="24" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="344" Height="99"/>
+            <Button x:Name="Cancel_Button" Click="Cancel_Button_Click" Content="Cancel" Grid.Row="2" Grid.Column="2" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="344" Height="99"/>
         </Grid>
     </Grid>
 </Page>
