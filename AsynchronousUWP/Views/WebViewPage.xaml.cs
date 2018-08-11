@@ -9,7 +9,6 @@ namespace AsynchronousUWP.Views
 {
     public sealed partial class WebViewPage : Page, INotifyPropertyChanged
     {
-        // TODO WTS: Set the URI of the page to show by default
         private const string DefaultUrl = "https://developer.microsoft.com/en-us/windows/apps";
 
         private Uri _source;

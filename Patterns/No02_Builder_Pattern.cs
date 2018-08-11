@@ -9,34 +9,32 @@
     {
         public static void Main()
         {
-            //Create Director
-            Shop shop = new Shop();
-
             //Builder
             VehicleBuilder builder;
 
             //Create ConcreteBuilder and Execute Build
             builder = new ScooterBuilder();
-            shop.Construct(builder);
+            Shop.Construct(builder);
             builder.Vehicle.Show();
 
             builder = new CarBuilder();
-            shop.Construct(builder);
+            Shop.Construct(builder);
             builder.Vehicle.Show();
 
             builder = new MotorCycleBuilder();
-            shop.Construct(builder);
+            Shop.Construct(builder);
             builder.Vehicle.Show();
         }
 
         /// <summary>
         /// The 'Director' class
         /// </summary>
-        class Shop
+        static class Shop
         {
             // Builder uses a complex series of steps
-            public void Construct(VehicleBuilder vehicleBuilder)
+            public static void Construct(VehicleBuilder vehicleBuilder)
             {
+                //一か所にまとめておくことも可能。
                 vehicleBuilder.BuildFrame();
                 vehicleBuilder.BuildEngine();
                 vehicleBuilder.BuildWheels();
@@ -146,6 +144,7 @@
         /// </summary>
         abstract class VehicleBuilder
         {
+            //TODO 「抽象クラスの実装：その２」
             protected Vehicle vehicle;
 
             // Gets vehicle instance
