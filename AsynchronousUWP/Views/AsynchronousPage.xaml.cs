@@ -11,6 +11,8 @@ namespace AsynchronousUWP.Views
 {
     public sealed partial class AsynchronousPage : Page, INotifyPropertyChanged
     {
+        #region 自動生成
+
         public AsynchronousPage()
         {
             InitializeComponent();
@@ -31,52 +33,67 @@ namespace AsynchronousUWP.Views
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        #endregion
+
         private Task<int> SampleTask = null;
         private CancellationTokenSource source = null;
         private void Execute_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.source = new CancellationTokenSource();
-            this.SampleTask =  Task.Run<int>(() =>
+            this.SampleTask = Task.Run<int>(() =>
+           {
+               return SampleMethod(this.source.Token);
+           }, this.source.Token);
+
+            //キャンセルのときだけ実行
+            this.SampleTask.ContinueWith((task, status) =>
             {
-                return SampleMethod(this.source.Token);
-            });
 
+                this.TaskJobStatus_TextBlock.Text = MessageManager.WriteJobStatus("OnlyOnCanceled");
+            }, new Object(),
+               CancellationToken.None,
+               TaskContinuationOptions.OnlyOnCanceled,
+               TaskScheduler.FromCurrentSynchronizationContext());
 
-            this.SampleTask.ContinueWith((Task,param) =>
+            //タスクが完了したときだけ実行
+            this.SampleTask.ContinueWith((task, status) =>
             {
-                
-                this.TaskJobStatus_TextBlock.Text = MessageManager.WriteJobStatus("OnlyOnFaulted");
-            }, this.source.Token, TaskScheduler.FromCurrentSynchronizationContext());
+                this.TaskJobStatus_TextBlock.Text = MessageManager.WriteJobStatus("OnlyOnRanToCompletion");
+                this.TaskJobStatus_TextBlock.Text += $"\r\nResult : {task.Result.ToString()}";
+            }, new Object(),
+               CancellationToken.None,
+               TaskContinuationOptions.OnlyOnRanToCompletion,
+               TaskScheduler.FromCurrentSynchronizationContext());
 
-            //TaskScheduler.Defaultを指定すると、ThradPoolのスレッドでタスクが実行されるため、以下の例外がスローされる。
-            //System.Exception: 'アプリケーションは、別のスレッドにマーシャリングされたインターフェイスを呼び出しました。
-            //this.SampleTask.ContinueWith((Task) =>
+            ////TaskScheduler.Defaultを指定すると、ThradPoolのスレッドでタスクが実行されるため、以下の例外がスローされる。
+            ////System.Exception: 'アプリケーションは、別のスレッドにマーシャリングされたインターフェイスを呼び出しました。
+            //this.SampleTask.ContinueWith((task,status) =>
             //{
             //    this.TaskJobStatus_TextBlock.Text = "canceled";
-            //},this.source.Token, TaskContinuationOptions.OnlyOnCanceled, TaskScheduler.Default);
-
-            this.SampleTask.ContinueWith((Task) =>
-            {
-                this.TaskJobStatus_TextBlock.Text = MessageManager.WriteJobStatus("RanToCompletion");
-            }, this.source.Token, TaskContinuationOptions.NotOnCanceled, TaskScheduler.FromCurrentSynchronizationContext());
-
+            //}, new Object(),
+            //   CancellationToken.None,
+            //   TaskContinuationOptions.OnlyOnRanToCompletion,
+            //   TaskScheduler.Default);
         }
 
         private void Cancel_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            this.source.Cancel();
+            if (this.source != null)
+                this.source.Cancel();
         }
         private int SampleMethod(CancellationToken token)
         {
             int sum = 0;
-            for (int i = 0; i < 10; i++)
+            int length = 10;
+            for (int i = 0; i < length; i++)
             {
+                string message = MessageManager.WriteJobStatus($"計算中：{i + 1}/{length}");
                 Task.Run(async () =>
                 {
                     await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
                         //ユーザーインターフェースを操作する
-                        this.TaskStatus_TextBlock.Text = $"ほげほげ{i}";
+                        this.TaskStatus_TextBlock.Text = message;
                     });
                 });
                 Thread.Sleep(1000);

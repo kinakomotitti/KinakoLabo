@@ -11,6 +11,7 @@ namespace AsynchronousUWP.Views
         public Blank1Page()
         {
             InitializeComponent();
+            this.CarouselControl.ItemsSource = new ItemsControl();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
