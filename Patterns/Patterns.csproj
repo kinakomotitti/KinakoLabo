@@ -44,8 +44,10 @@
   <ItemGroup>
     <Compile Include="No01_AbstractFactory_Pattern.cs" />
     <Compile Include="No02_Builder_Pattern.cs" />
+    <Compile Include="No04_Prototype_Pattern.cs" />
+    <Compile Include="No05_Singleton_Pattern.cs" />
     <Compile Include="No11_Flyweight_Pattern.cs" />
-    <Compile Include="No3_FactoryMethod_Pattern.cs" />
+    <Compile Include="No03_FactoryMethod_Pattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     #endregion
 
-    class No3_FactoryMethod_Pattern
+    class No03_FactoryMethod_Pattern
     {
 
         /// <summary>
