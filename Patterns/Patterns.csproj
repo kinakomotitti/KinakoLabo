@@ -53,6 +53,17 @@
     <Compile Include="No11_Flyweight_Pattern.cs" />
     <Compile Include="No03_FactoryMethod_Pattern.cs" />
     <Compile Include="No06_Adapter_Pattern.cs" />
+    <Compile Include="No13_ChainOfResponsibility_Pattern.cs" />
+    <Compile Include="No14_Command_Pattern.cs" />
+    <Compile Include="No15_Interpreter_Pattern.cs" />
+    <Compile Include="No16_Iterator_Pattern.cs" />
+    <Compile Include="No17_Mediator_Pattern.cs" />
+    <Compile Include="No18_Memento_Pattern.cs" />
+    <Compile Include="No19_Observer_Pattern.cs" />
+    <Compile Include="No20_State_Pattern.cs" />
+    <Compile Include="No21_Strategy_Pattern.cs" />
+    <Compile Include="No22_TemplateMethod_Pattern.cs" />
+    <Compile Include="No23_Visitor_Pattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
