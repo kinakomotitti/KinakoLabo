@@ -103,7 +103,7 @@
     /// <summary>
     /// The 'Decorator' abstract class
     /// </summary>
-    abstract class Decorator : LibraryItem
+    class Decorator : LibraryItem
     {
         protected LibraryItem libraryItem;
 
@@ -135,14 +135,9 @@
             libraryItem.NumCopies--;
         }
 
-        public void ReturnItem(string name)
-        {
-            borrowers.Remove(name);
-            libraryItem.NumCopies++;
-        }
-
         public override void Display()
         {
+            //TODO 「継承なしで、インスタンスに対し、機能を拡張する」
             base.Display();
 
             foreach (string borrower in borrowers)

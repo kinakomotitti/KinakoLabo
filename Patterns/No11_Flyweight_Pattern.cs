@@ -8,6 +8,10 @@
     using System.Threading.Tasks;
     #endregion
 
+    /// <summary>
+    /// このパターンは、生成済みのオブジェクトをできるだけ再利用(共有)し、
+    /// 無駄なオブジェクト生成(メモリ使用)を防止する仕組みを提供するパターンです。
+    /// </summary>
     class No11_Flyweight_Pattern
     {
         static void Main()
@@ -55,6 +59,7 @@
                         case 'B': character = new CharacterB(); break;
                         case 'Z': character = new CharacterZ(); break;
                     }
+                    //ない場合は生成される
                     _characters.Add(key, character);
                 }
                 return character;

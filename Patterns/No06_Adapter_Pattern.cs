@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Patterns
+﻿namespace Patterns
 {
+    #region using
+    using System;
+    #endregion
+
     class No06_Adapter_Pattern
     {
         /// <summary>
@@ -13,11 +11,9 @@ namespace Patterns
         /// </summary>
         static void Main()
         {
-            // Non-adapted chemical compound
             Compound unknown = new Compound("Unknown");
             unknown.Display();
 
-            // Adapted chemical compounds
             Compound water = new RichCompound("Water");
             water.Display();
 
@@ -68,6 +64,7 @@ namespace Patterns
                 _meltingPoint = _bank.GetCriticalPoint(_chemical, "M");
                 _molecularWeight = _bank.GetMolecularWeight(_chemical);
                 _molecularFormula = _bank.GetMolecularStructure(_chemical);
+                //TODO 「抽象メソッドの処理をオーバーライドし、その処理の中で元処理を呼び出す」
                 base.Display();
                 Console.WriteLine(" Formula: {0}", _molecularFormula);
                 Console.WriteLine(" Weight : {0}", _molecularWeight);

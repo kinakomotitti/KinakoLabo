@@ -1,7 +1,9 @@
 ﻿namespace Patterns
 {
+    #region using
     using System;
     using System.Collections.Generic;
+    #endregion
 
     class No08_Composite_Pattern
     {
@@ -31,13 +33,10 @@
             root.Display(1);
         }
 
-        /// <summary>
-        /// The 'Component' Treenode
-        /// </summary>
         abstract class DrawingElement
         {
             protected string _name;
-            // Constructor
+
             public DrawingElement(string name)
             {
                 this._name = name;
@@ -70,11 +69,9 @@
             }
         }
 
-        /// <summary>
-        /// The 'Composite' class
-        /// </summary>
         class CompositeElement : DrawingElement
         {
+            //TODO 「木構造を表現する」
             private List<DrawingElement> elements =new List<DrawingElement>();
 
             public CompositeElement(string name) : base(name) { }

@@ -7,18 +7,11 @@
 
     class No07_Bridge_Pattern
     {
-        /// <summary>
-        /// Entry point into console application.
-        /// </summary>
         static void Main()
         {
-            // Create RefinedAbstraction
             Customers customers = new Customers("Chicago");
-
-            // Set ConcreteImplementor
             customers.Data = new CustomersData();
 
-            // Exercise the bridge
             customers.Show();
             customers.Next();
             customers.Show();
@@ -28,11 +21,10 @@
             customers.ShowAll();
         }
 
-        /// <summary>
-        /// The 'Abstraction' class
-        /// </summary>
         class CustomersBase
         {
+            //TODO 「モデルクラスにデータの操作を集約する」
+            //実際には、DataObjectクラス（抽象クラス）を継承したクラスで実装される
             private DataObject _dataObject;
             protected string group;
             public CustomersBase(string group)
@@ -79,9 +71,6 @@
             }
         }
 
-        /// <summary>
-        /// The 'RefinedAbstraction' class
-        /// </summary>
         class Customers : CustomersBase
         {
             // Constructor
@@ -95,6 +84,8 @@
                 Console.WriteLine("------------------------");
             }
         }
+
+        #region DataObject
 
         /// <summary>
         /// The 'Implementor' abstract class
@@ -165,5 +156,7 @@
                 }
             }
         }
+        
+        #endregion
     }
 }
