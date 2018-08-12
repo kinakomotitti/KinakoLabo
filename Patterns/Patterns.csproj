@@ -46,8 +46,13 @@
     <Compile Include="No02_Builder_Pattern.cs" />
     <Compile Include="No04_Prototype_Pattern.cs" />
     <Compile Include="No05_Singleton_Pattern.cs" />
+    <Compile Include="No07_Bridge_Pattern.cs" />
+    <Compile Include="No08_Composite_Pattern.cs" />
+    <Compile Include="No09_Decorator_Pattern.cs" />
+    <Compile Include="No10_Facade_Pattern.cs" />
     <Compile Include="No11_Flyweight_Pattern.cs" />
     <Compile Include="No03_FactoryMethod_Pattern.cs" />
+    <Compile Include="No06_Adapter_Pattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
