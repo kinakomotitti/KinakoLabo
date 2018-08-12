@@ -53,6 +53,7 @@
     <Compile Include="No11_Flyweight_Pattern.cs" />
     <Compile Include="No03_FactoryMethod_Pattern.cs" />
     <Compile Include="No06_Adapter_Pattern.cs" />
+    <Compile Include="No12_Proxy_Pattern.cs" />
     <Compile Include="No13_ChainOfResponsibility_Pattern.cs" />
     <Compile Include="No14_Command_Pattern.cs" />
     <Compile Include="No15_Interpreter_Pattern.cs" />

@@ -4,6 +4,11 @@
     using System;
     #endregion
 
+    /// <summary>
+    /// 互換性のないインタフェースを持つメソッド間の相違を、
+    /// 埋めるような（適合させる）パターンが、「Adapter パターン」です。
+    /// ※説明と実装がなんか違う・・・
+    /// </summary>
     class No06_Adapter_Pattern
     {
         /// <summary>
