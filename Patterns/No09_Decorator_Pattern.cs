@@ -138,6 +138,9 @@
         public override void Display()
         {
             //TODO 「継承なしで、インスタンスに対し、機能を拡張する」
+            //このサンプルでは、「class Video : LibraryItem」のインスタンスに対し、
+            //foreach以下の処理を追加している。
+            //base.Display()では、libraryItem（Video型のインスタンス）.Displayが実行される。
             base.Display();
 
             foreach (string borrower in borrowers)
