@@ -32,7 +32,7 @@
 
         abstract class ColorPrototype
         {
-            //TODO 「Clone処理をできるようにすること」
+            //TODO 「◆Clone処理をできるようにすること」
             public abstract ColorPrototype Clone();
         }
 

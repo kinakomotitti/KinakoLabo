@@ -81,7 +81,7 @@
             Item CurrentItem { get; }
         }
 
-        //TODO 「コレクションへの順次アクセスのインターフェースを持つクラスの設計」
+        //TODO 「♪コレクションへの順次アクセスのインターフェースを持つクラスの設計」
         class Iterator : IAbstractIterator
         {
             private Collection _collection;

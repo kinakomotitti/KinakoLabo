@@ -54,7 +54,7 @@
                 _servers.Add("ServerV");
             }
 
-            //TODO 「実行中のアプリケーションの中でインスタンスを１つにする」
+            //TODO 「☣実行中のアプリケーションの中でインスタンスを１つにする」
             //Double checked lockingは有効な手法だが、実行コストがかかるため、多用しないほうがいいらしい。
             //マルチスレッドを考えると、Singletoneパターンの実装は奥が深い。
             public static LoadBalancer GetLoadBalancer()

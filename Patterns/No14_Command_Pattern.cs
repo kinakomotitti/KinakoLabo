@@ -121,7 +121,7 @@
             }
             public void Compute(char @operator, int operand)
             {
-                //TODO 「コマンドの処理を集約・引数でコマンドの種別を切り替える（オプション引数的な感じ）」
+                //TODO 「♠コマンドの処理を集約・引数でコマンドの種別を切り替える（オプション引数的な感じ）」
                 Command command = new CalculatorCommand(_calculator, @operator, operand);
                 command.Execute();
                 _commands.Add(command);

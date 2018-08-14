@@ -25,7 +25,7 @@
         /// </summary>
         abstract class ContinentFactory
         {
-            //TODO 「抽象クラスの実装：その１」
+            //TODO 「★抽象クラスの実装：その１」
             public abstract Herbivore CreateHerbivore();
             public abstract Carnivore CreateCarnivore();
         }

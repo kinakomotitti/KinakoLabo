@@ -144,7 +144,7 @@
         /// </summary>
         abstract class VehicleBuilder
         {
-            //TODO 「抽象クラスの実装：その２」
+            //TODO 「★抽象クラスの実装：その２」
             protected Vehicle vehicle;
 
             // Gets vehicle instance

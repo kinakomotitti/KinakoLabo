@@ -187,7 +187,7 @@
 
         class Account
         {
-            //TODO 「インスタンスの状態を管理する別のクラスを保持する」
+            //TODO 「☯インスタンスの状態を管理する別のクラスを保持する」
             private State _state;
             private string _owner;
 

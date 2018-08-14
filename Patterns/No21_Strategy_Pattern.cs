@@ -67,7 +67,7 @@
             private SortStrategy _sortstrategy = new QuickSort();
             public void SetSortStrategy(SortStrategy sortstrategy)
             {
-                //TODO 「主処理カートリッジを入れ替えていろいろな処理を実行することができる」
+                //TODO 「♠主処理カートリッジを入れ替えていろいろな処理を実行することができる」
                 this._sortstrategy = sortstrategy;
             }
 

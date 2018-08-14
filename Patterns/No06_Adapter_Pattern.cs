@@ -69,7 +69,7 @@
                 _meltingPoint = _bank.GetCriticalPoint(_chemical, "M");
                 _molecularWeight = _bank.GetMolecularWeight(_chemical);
                 _molecularFormula = _bank.GetMolecularStructure(_chemical);
-                //TODO 「抽象メソッドの処理をオーバーライドし、その処理の中で元処理を呼び出す」
+                //TODO 「★抽象メソッドの処理をオーバーライドし、その処理の中で元処理を呼び出す」
                 base.Display();
                 Console.WriteLine(" Formula: {0}", _molecularFormula);
                 Console.WriteLine(" Weight : {0}", _molecularWeight);

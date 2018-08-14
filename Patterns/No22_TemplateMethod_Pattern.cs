@@ -20,7 +20,7 @@
             daoProducts.Run();
         }
 
-        //TODO 「Baseクラスを使って見ましょう的な感じ」
+        //TODO 「★Baseクラスを使って見ましょう的な感じ」
         abstract class DataAccessObject
         {
             protected string connectionString;

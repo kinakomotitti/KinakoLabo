@@ -47,7 +47,7 @@
                 if (_characters.ContainsKey(key))
                 {
                     //このクラスの生存期間の中で、_characters変数が再利用される。
-                    //TODO 「共通クラスのプロパティのライフサイクルとその使い方」
+                    //TODO 「▼共通クラスのプロパティのライフサイクルとその使い方」
                     //Flyweightの実態は、_charactersこれと、これをホストしているこのクラス！
                     character = _characters[key];
                 }

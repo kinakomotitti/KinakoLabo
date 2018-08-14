@@ -93,7 +93,7 @@
 
             public override void Accept(IVisitor visitor)
             {
-                //TODO 「POCOとビジネスプロセスの分離の表現」
+                //TODO 「☸POCOとビジネスプロセスの分離の表現」
                 //「データ構造」と「それに対する処理」が分離する瞬間。
                 //「データ構造」が自分自身を「処理」に引き渡す。
                 visitor.Visit(this);

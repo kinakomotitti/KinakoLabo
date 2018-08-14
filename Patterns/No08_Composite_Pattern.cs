@@ -71,7 +71,7 @@
 
         class CompositeElement : DrawingElement
         {
-            //TODO 「木構造を表現する」
+            //TODO 「✇木構造を表現する」
             private List<DrawingElement> elements =new List<DrawingElement>();
 
             public CompositeElement(string name) : base(name) { }

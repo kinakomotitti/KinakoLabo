@@ -95,7 +95,7 @@
         {
             Console.WriteLine("{0} applies for {1:C} loan\n", cust.Name, amount);
             bool eligible = true;
-            //TODO 「複雑な処理（ここでは条件分離）の手順を隠蔽する。」
+            //TODO 「●複雑な処理（ここでは条件分離）の手順を隠蔽する。」
             // Check creditworthyness of applicant
             if (!_bank.HasSufficientSavings(cust, amount)) eligible = false;
             else if (!_loan.HasNoBadLoans(cust)) eligible = false;

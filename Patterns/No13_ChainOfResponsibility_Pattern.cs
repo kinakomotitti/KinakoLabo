@@ -35,7 +35,7 @@
                 this.successor = successor;
             }
             //このメソッドを実装したものについて
-            //TODO 「再帰呼び出しによる繰り返し処理に適したクラス構造」
+            //TODO 「✇再帰呼び出しによる繰り返し処理に適したクラス構造」
             public abstract void ProcessRequest(Purchase purchase);
         }
 

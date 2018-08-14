@@ -59,7 +59,7 @@
             {
                 Participant participant = _participants[to];
 
-                //TODO 「複雑な処理は、処理の担当者に振り分ける（集約する）」
+                //TODO 「●複雑な処理は、処理の担当者に振り分ける（集約する）」
                 //proxyと何が違う・・・？
                 if (participant != null) participant.Receive(from, message);
             }

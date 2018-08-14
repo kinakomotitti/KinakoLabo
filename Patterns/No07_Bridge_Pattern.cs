@@ -23,7 +23,7 @@
 
         class CustomersBase
         {
-            //TODO 「モデルクラスにデータの操作を集約する」
+            //TODO 「●モデルクラスにデータの操作を集約する」
             //実際には、DataObjectクラス（抽象クラス）を継承したクラスで実装される
             private DataObject _dataObject;
             protected string group;
