@@ -13,12 +13,14 @@
     {
         static void Main()
         {
-            List<Expression> tree = new List<Expression>();
-            tree.Add(new ThousandExpression());
-            tree.Add(new HundredExpression());
-            tree.Add(new TenExpression());
-            tree.Add(new OneExpression());
-
+            //入力チェック処理とかこれで効率よくできそう
+            List<Expression> tree = new List<Expression>()
+            {
+                new ThousandExpression(),
+                new HundredExpression(),
+                new TenExpression(),
+                new OneExpression()
+            };
             Context context = new Context("MCMXXVIII");
             tree.ForEach(exp => exp.Interpret(context));
             Console.WriteLine("{0} = {1}", "MCMXXVIII", context.Output);
@@ -50,7 +52,8 @@
         {
             public void Interpret(Context context)
             {
-                if (context.Input.Length == 0)return;
+                //TODO 「★継承先のメソッドの呼び出し」
+                if (context.Input.Length == 0) return;
                 if (context.Input.StartsWith(Nine()))
                 {
                     context.Output += (9 * Multiplier());
