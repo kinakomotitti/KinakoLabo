@@ -38,7 +38,7 @@
 
         class MathProxy : IMath
         {
-            //TODO 「★Proxy対象のクラスの利用を代行する」
+            //TODO 「☆Proxy対象のクラスの利用を代行する」
             //対象のクラス（ここではMath）の内部を容易に変更できない場合に、挙動を追加したり、
             //対象のクラスにバグがあったときに対応することができる（Adapter的な使い方？）
             private Math _math = new Math();

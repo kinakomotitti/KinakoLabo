@@ -5,12 +5,14 @@
     #endregion
 
     /// <summary>
-    /// 
+    /// このパターンは、あるオブジェクトの任意の時点の状態を覚えておき(保存)、 
+    /// 後でその状態にオブジェクトを戻すための工夫を提供するパターンです
     /// </summary>
     class No18_Memento_Pattern
     {
         static void Main()
         {
+            //TODO 「本質がわかっていない( ﾟДﾟ)」
             SalesProspect s = new SalesProspect();
             s.Name = "Noel van Halen";
             s.Phone = "(412) 256-0990";
